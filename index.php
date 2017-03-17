@@ -1,11 +1,10 @@
 <?php
 session_start();
-function redirect()
-{
-    if ($_SESSION['Username'] !="Plop" || $_SESSION['Password'] != "1234" )
-        header("Location: login.php");
-}
-redirect();
+
+ if(isset($_SESSION['Username']) && isset($_SESSION['Password'])) {
+        if ($_SESSION['Username'] !="Plop" || $_SESSION['Password'] != "1234" )
+            header("Location: login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,13 +18,7 @@ redirect();
 <h1>Al-Bhed translator</h1>
 <p>Mot à traduire : <input id="trans" type="text" name='trad' /></p>
 <div id="div"></div>
-<button onclick="redirige()">Logout</button>
-<script>
-    function redirige() {
-
-        window.location.replace("logout.php");
-    }
-</script>
+<a href="logout.php">Logout</a>
 
 <script>
     $(document).ready(function(){

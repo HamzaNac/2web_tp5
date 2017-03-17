@@ -2,19 +2,20 @@
 session_start();
 
 
-if ($_SESSION['Username'] =="Plop" && $_SESSION['Password'] == "1234" )
-    header("Location: index.php");
-
-
+if(isset($_SESSION['Username']) && isset($_SESSION['Password'])) {
+    if ($_SESSION['Username'] =="Plop" && $_SESSION['Password'] == "1234" )
+        header("Location: index.php");
+}
 if (isset($_POST['Username']) ){
     if ($_POST["Username"] == "Plop" && $_POST["Password"] == "1234"){
         $_SESSION["Username"] = "Plop";
         $_SESSION["Password"] = "1234";
-        header("Location : index.php");
+        header("Location: index.php");
     }
     else{
         echo "Wrong Username or Password";
     }
+
 }
 ?>
 <!DOCTYPE html>

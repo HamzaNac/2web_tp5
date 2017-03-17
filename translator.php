@@ -1,4 +1,3 @@
-
 <?php
 $final_fantasy = array (
     "a" => "y",
